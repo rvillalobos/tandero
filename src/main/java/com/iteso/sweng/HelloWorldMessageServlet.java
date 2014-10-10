@@ -13,7 +13,7 @@ public class HelloWorldMessageServlet extends HttpServlet {
 
     public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         RequestDispatcher requestDispatcher = request.getRequestDispatcher("/hello.jsp");
-        request.setAttribute("message", "Hello World");
+        request.setAttribute("message test", "Hello World 2");
         requestDispatcher.forward(request, response);
     }
 }
