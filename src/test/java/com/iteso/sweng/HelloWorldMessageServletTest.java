@@ -29,8 +29,7 @@ public class HelloWorldMessageServletTest {
 
         servlet.doGet(request, response);
 
-        verify(request).setAttribute("message", "Hello World");
-
+        verify(request).setAttribute("message test", "Hello World 2");
         verify(requestDispatcher).forward(request, response);
     }
 }
