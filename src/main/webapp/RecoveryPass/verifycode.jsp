@@ -1,11 +1,23 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-         pageEncoding="ISO-8859-1"%>
+<%--
+    Document   : verifycode
+    Created on : 014-oct-2014, 17:50:20
+    Author     : Daniel
+--%>
+<%@taglib prefix="t" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<t:if test="${sessionScope['sessionVCode']!=null}">
+    <% response.setContentType("text/html");
+        RequestDispatcher rd=request.getRequestDispatcher("vpass.jsp");
+        rd.forward(request, response);%>
+</t:if>
+<!DOCTYPE html>
 <html>
 <head>
     <link rel='stylesheet' href='<%= org.webjars.AssetLocator.getWebJarPath("css/bootstrap.min.css") %>'>
     <link rel='stylesheet' href='<%= org.webjars.AssetLocator.getWebJarPath("css/bootstrap-theme.min.css") %>'>
-    <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-    <title>Login Application</title>
+    <title>Verify Code || TANDERO</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
 </head>
 <body>
 
@@ -14,10 +26,10 @@
         <div class="btn-group btn-group-lg">
 
             <div class="btn-group">
-            <form action="welcomeServlet" method="post">
-                <button type="submit" class="btn btn-success">Home</button>
+                <form action="welcomeServlet" method="post">
+                    <button type="submit" class="btn btn-success">Home</button>
 
-           </form>
+                </form>
             </div>
 
             <div class="btn-group">
@@ -38,41 +50,24 @@
                 </form>
             </div>
         </div>
-        </div><!-- /.navbar-collapse -->
+    </div><!-- /.navbar-collapse -->
     </div><!-- /.container-fluid -->
 </nav>
 
-<form action="profileServlet" method="post">
-    <fieldset style="width: 300px">
-        <legend> Login to App </legend>
-        <table>
-            <tr>
-                <td>User Email</td>
-                <td><input type="text" name="email" required="required" /></td>
-            </tr>
-            <tr>
-                <td>Password</td>
-                <td><input type="password" name="password" required="required" /></td>
-            </tr>
-            <tr>
-                <td><input type="submit" class=" btn btn-danger" value="Login" /></td>
-            </tr>
-        </table>
-    </fieldset>
+<p><strong>Enter your email & code for change your password.</strong></p>
+<p style="color: #ff0000">${sessionScope['error']}</p>
+<form action="VerifyCodeServlet" method="post">
+    <label for="textfield">E-mail:</label>
+    <input type="text" name="Remail" id="Remail">
+    <br>
+    <label for="textfield2">Code:</label>
+    <input type="code" name="code" id="code">
+    <br>
+    <input type="submit" value="Recovery">
 </form>
-
-<<<<<<< HEAD
-=======
-<form action="RGenerateServlet" method="post">
-    <input type="submit"  class="btn btn-warning" value="Forgot Your Password?" />
-</form>
-
->>>>>>> developdaniel
-<form action="faqservlet" method="post">
-    <input type="submit" class="btn btn-warning" value="FAQ" />
-</form>
+<br>
+<br>
 <script type='text/javascript' src='<%= org.webjars.AssetLocator.getWebJarPath("jquery.min.js") %>'></script>
 <script type='text/javascript' src='<%= org.webjars.AssetLocator.getWebJarPath("js/bootstrap.min.js") %>'></script>
-
 </body>
 </html>

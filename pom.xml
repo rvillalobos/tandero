@@ -66,6 +66,15 @@
             <version>3.0.0</version>
         </dependency>
 
+<<<<<<< HEAD
+=======
+        <dependency>
+            <groupId>javax.mail</groupId>
+            <artifactId>mail</artifactId>
+            <version>1.4.7</version>
+        </dependency>
+
+>>>>>>> developdaniel
     </dependencies>
 
     <build>
@@ -88,4 +97,10 @@
             </plugin>
         </plugins>
     </reporting>
+
+    <properties>
+        <maven.compiler.source>1.7</maven.compiler.source>
+        <maven.compiler.target>1.7</maven.compiler.target>
+    </properties>
+
 </project>

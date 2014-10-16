@@ -61,6 +61,54 @@
         <url-pattern>/faqmemberservlet</url-pattern>
     </servlet-mapping>
 
+<<<<<<< HEAD
+=======
+    <servlet>
+        <servlet-name>GenerateServlet</servlet-name>
+        <servlet-class>com.iteso.sweng.RecoveryPass.GenerateServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>GenerateServlet</servlet-name>
+        <url-pattern>/GenerateServlet</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>VerifyCodeServlet</servlet-name>
+        <servlet-class>com.iteso.sweng.RecoveryPass.VerifyCodeServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>VerifyCodeServlet</servlet-name>
+        <url-pattern>/VerifyCodeServlet</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+    <servlet-name>VPassServlet</servlet-name>
+    <servlet-class>com.iteso.sweng.RecoveryPass.VPassServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>VPassServlet</servlet-name>
+        <url-pattern>/VPassServlet</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>RGenerateServlet</servlet-name>
+        <servlet-class>com.iteso.sweng.RecoveryPass.RGenerateServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>RGenerateServlet</servlet-name>
+        <url-pattern>/RGenerateServlet</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>RedirServlet</servlet-name>
+        <servlet-class>com.iteso.sweng.RecoveryPass.RedirServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>RedirServlet</servlet-name>
+        <url-pattern>/RedirServlet</url-pattern>
+    </servlet-mapping>
+
+>>>>>>> developdaniel
 
     <session-config>
         <session-timeout>
