@@ -1,17 +1,18 @@
-<%-- 
-    Document   : error
-    Created on : 11-oct-2014, 19:12:39
-    Author     : Daniel
+<%--
+  Created by IntelliJ IDEA.
+  User: Alejandro
+  Date: 15/10/2014
+  Time: 10:25 AM
+  To change this template use File | Settings | File Templates.
 --%>
-
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
-<!DOCTYPE html>
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+         pageEncoding="ISO-8859-1"%>
 <html>
 <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+    <title>Welcome <%=session.getAttribute("name")%></title>
     <link rel='stylesheet' href='<%= org.webjars.AssetLocator.getWebJarPath("css/bootstrap.min.css") %>'>
     <link rel='stylesheet' href='<%= org.webjars.AssetLocator.getWebJarPath("css/bootstrap-theme.min.css") %>'>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <title>ERROR || Tandero</title>
 </head>
 <body>
 
@@ -21,7 +22,7 @@
         <div class="btn-group btn-group-lg">
 
             <div class="btn-group">
-                <form action="loginServlet" method="post">
+                <form action="welcomeServlet" method="post">
                     <button type="submit" class="btn btn-success">Home</button>
 
                 </form>
@@ -34,15 +35,14 @@
                 </form>
             </div>
             <div class="btn-group">
-                <form action="loginServlet" method="post">
+                <form action="profileServlet" method="post">
                     <button type="submit" class="btn btn-success">Profile</button>
 
                 </form>
             </div>
             <div class="btn-group">
-                <form action="faqmemberservlet" method="post">
-                    <button type="input" class="btn btn-success">Register</button>
-
+                <form action="loginServlet" method="post">
+                    <button type="input" class="btn btn-success">LogIn</button>
                 </form>
             </div>
         </div>
@@ -50,7 +50,7 @@
     </div><!-- /.container-fluid -->
 </nav>
 
-<h1>Acceso Denegado</h1>
+<h1> Welcome to tandero </h1>
 
 <form action="loginServlet" method="post">
     <button type="input" class="btn-group-lg btn-success">GO TO LOGIN PAGE</button>
@@ -58,6 +58,7 @@
 
 <script type='text/javascript' src='<%= org.webjars.AssetLocator.getWebJarPath("jquery.min.js") %>'></script>
 <script type='text/javascript' src='<%= org.webjars.AssetLocator.getWebJarPath("js/bootstrap.min.js") %>'></script>
-
 </body>
+
 </html>
+
