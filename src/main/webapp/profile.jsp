@@ -4,8 +4,10 @@
     Author     : Daniel
 --%>
 <%
-    if(session.getAttribute("email")==null)
-        response.sendRedirect("error.jsp");%>
+    if(request.getAttribute("email")==null)
+        response.sendRedirect("error.jsp");
+
+%>
 
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
@@ -20,6 +22,42 @@
     <link rel='stylesheet' href='<%= org.webjars.AssetLocator.getWebJarPath("css/bootstrap-theme.min.css") %>'>
 </head>
 <body>
+
+
+<nav class="navbar navbar-default" role="navigation">
+    <div class="container-fluid">
+        <div class="btn-group btn-group-lg">
+
+            <div class="btn-group">
+                <form action="welcomeServlet" method="post">
+                    <button type="submit" class="btn btn-success">Home</button>
+
+                </form>
+            </div>
+
+            <div class="btn-group">
+                <form action="faqservlet" method="post">
+                    <button type="input" class="btn btn-success">Faq</button>
+
+                </form>
+            </div>
+            <div class="btn-group">
+                <form action="profileServlet" method="post">
+                    <button type="submit" class="btn btn-success">Profile</button>
+
+                </form>
+            </div>
+            <div class="btn-group">
+                <form action="loginServlet" method="post">
+                    <button type="input" class="btn btn-success">LogIn</button>
+                </form>
+            </div>
+        </div>
+    </div><!-- /.navbar-collapse -->
+    </div><!-- /.container-fluid -->
+</nav>
+
+
 <%String email = (String)session.getAttribute("email");%>
 <%
     BDProfile a = new BDProfile();
@@ -48,9 +86,6 @@
         out.println("No verified");
     }
 %></p></span>
-<form action="logout" method="post">
-    <p><input type="submit" value="Log Out"></p>
-</form>
 
 <form action="faqmemberservlet" method="post">
     <input type="submit" class="btn btn-warning" value="Member´s FAQ" />
@@ -58,6 +93,7 @@
 
 <script type='text/javascript' src='<%= org.webjars.AssetLocator.getWebJarPath("jquery.min.js") %>'></script>
 <script type='text/javascript' src='<%= org.webjars.AssetLocator.getWebJarPath("js/bootstrap.min.js") %>'></script>
+
 </body>
 </html>
 <%}%>
