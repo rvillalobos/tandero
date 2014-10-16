@@ -3,6 +3,8 @@
     <welcome-file-list>
         <welcome-file>index.jsp</welcome-file>
     </welcome-file-list>
+
+
     <servlet>
         <servlet-name>login</servlet-name>
         <servlet-class>com.iteso.sweng.Servlets.LoginServlet</servlet-class>
@@ -11,6 +13,28 @@
         <servlet-name>login</servlet-name>
         <url-pattern>/loginServlet</url-pattern>
     </servlet-mapping>
+
+
+    <servlet>
+        <servlet-name>faqgeneral</servlet-name>
+        <servlet-class>com.iteso.sweng.Servlets.FAQServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>faqgeneral</servlet-name>
+        <url-pattern>/faqservlet</url-pattern>
+    </servlet-mapping>
+
+
+    <servlet>
+        <servlet-name>faqmember</servlet-name>
+        <servlet-class>com.iteso.sweng.Servlets.FAQMemberServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>faqmember</servlet-name>
+        <url-pattern>/faqmemberservlet</url-pattern>
+    </servlet-mapping>
+
+
     <session-config>
         <session-timeout>
             30

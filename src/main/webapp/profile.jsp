@@ -51,6 +51,11 @@
 <form action="logout" method="post">
     <p><input type="submit" value="Log Out"></p>
 </form>
+
+<form action="faqmemberservlet" method="post">
+    <input type="submit" class="btn btn-warning" value="Member´s FAQ" />
+</form>
+
 <script type='text/javascript' src='<%= org.webjars.AssetLocator.getWebJarPath("jquery.min.js") %>'></script>
 <script type='text/javascript' src='<%= org.webjars.AssetLocator.getWebJarPath("js/bootstrap.min.js") %>'></script>
 </body>

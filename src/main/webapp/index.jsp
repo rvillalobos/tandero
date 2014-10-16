@@ -27,6 +27,9 @@
     </fieldset>
 </form>
 
+<form action="faqservlet" method="post">
+    <input type="submit" class="btn btn-warning" value="FAQ" />
+</form>
 <script type='text/javascript' src='<%= org.webjars.AssetLocator.getWebJarPath("jquery.min.js") %>'></script>
 <script type='text/javascript' src='<%= org.webjars.AssetLocator.getWebJarPath("js/bootstrap.min.js") %>'></script>
 
