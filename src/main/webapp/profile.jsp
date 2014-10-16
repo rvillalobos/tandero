@@ -4,7 +4,7 @@
     Author     : Daniel
 --%>
 <%
-    if(session.getAttribute("sessionEmail")==null)
+    if(session.getAttribute("email")==null)
         response.sendRedirect("error.jsp");%>
 
 
@@ -20,7 +20,7 @@
     <link rel='stylesheet' href='<%= org.webjars.AssetLocator.getWebJarPath("css/bootstrap-theme.min.css") %>'>
 </head>
 <body>
-<%String email = (String)session.getAttribute("sessionEmail");%>
+<%String email = (String)session.getAttribute("email");%>
 <%
     BDProfile a = new BDProfile();
     a.conectar();

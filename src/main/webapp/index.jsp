@@ -13,12 +13,12 @@
         <legend> Login to App </legend>
         <table>
             <tr>
-                <td>User ID</td>
-                <td><input type="text" name="username" required="required" /></td>
+                <td>User Email</td>
+                <td><input type="text" name="email" required="required" /></td>
             </tr>
             <tr>
                 <td>Password</td>
-                <td><input type="password" name="userpass" required="required" /></td>
+                <td><input type="password" name="password" required="required" /></td>
             </tr>
             <tr>
                 <td><input type="submit" class=" btn btn-danger" value="Login" /></td>

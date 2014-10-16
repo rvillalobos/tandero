@@ -15,19 +15,21 @@ public class Profile {
     private String pmobile;
     private String nick;
     private boolean status;
+    private String image;
 
-    public Profile(){
+    public Profile() {
 
-        this.name=null;
-        this.lastname=null;
-        this.email=null;
-        this.password=null;
-        this.address=null;
-        this.phome=null;
-        this.poffice=null;
-        this.pmobile=null;
-        this.nick=null;
-        this.status=false;
+        this.name = null;
+        this.lastname = null;
+        this.email = null;
+        this.password = null;
+        this.address = null;
+        this.phome = null;
+        this.poffice = null;
+        this.pmobile = null;
+        this.nick = null;
+        this.status = false;
+        this.image = null;
 
     }
 
@@ -169,5 +171,13 @@ public class Profile {
      */
     public void setStatus(boolean status) {
         this.status = status;
+    }
+
+    public void setImage(String image) {
+        this.image = image;
+    }
+
+    public String getImage(String nick) {
+        return image;
     }
 }

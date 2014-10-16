@@ -20,22 +20,22 @@ public class LoginServlet extends HttpServlet{
             throws ServletException, IOException {
         response.setContentType("text/html");
         PrintWriter out = response.getWriter();
-        String n=request.getParameter("username");
-        String p=request.getParameter("userpass");
+        String n=request.getParameter("email");
+        String p=request.getParameter("password");
         HttpSession session = request.getSession(false);
-        request.setAttribute("username", n);
-        request.setAttribute("userpass", p);
-        session.setAttribute("username", n);
-        session.setAttribute("userpass", p);
+
         if(session!=null)
-            session.setAttribute("name", n);
         if(LoginDao.validate(n, p)){
-            RequestDispatcher rd=request.getRequestDispatcher("welcome.jsp");
+            RequestDispatcher rd=request.getRequestDispatcher("profile.jsp");
+            request.setAttribute("email", n);
+            request.setAttribute("password", p);
+            session.setAttribute("email", n);
+            session.setAttribute("password", p);
             rd.forward(request,response);
         }
         else{
             out.print("<p style=\"color:red\">Sorry username or password error</p>");
-            RequestDispatcher rd=request.getRequestDispatcher("index.jsp");
+            RequestDispatcher rd=request.getRequestDispatcher("error.jsp");
             rd.include(request,response);
         }
         out.close();

@@ -9,11 +9,11 @@ public class BDProfile {
 
     public Connection conexion;
     public String userDb = "root";
-    public String passDb = "";
+    public String passDb = "root";
 
     public void conectar() throws SQLException,ClassNotFoundException{
         Class.forName("com.mysql.jdbc.Driver");
-        conexion=DriverManager.getConnection("jdbc:mysql://127.0.0.1/tandero",userDb, passDb);
+        conexion=DriverManager.getConnection("jdbc:mysql://localhost:3306/tandero",userDb, passDb);
     }
     //Desconectar a la Base de datos
     public void desconectar() throws SQLException, ClassNotFoundException{
@@ -36,6 +36,7 @@ public class BDProfile {
             contacto.setPoffice(rs.getString("poffice"));
             contacto.setPmobile(rs.getString("pmobile"));
             contacto.setStatus(rs.getBoolean("status"));
+            contacto.setImage(rs.getString("image"));
             return contacto;
         }
 
