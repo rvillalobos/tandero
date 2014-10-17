@@ -61,8 +61,6 @@
         <url-pattern>/faqmemberservlet</url-pattern>
     </servlet-mapping>
 
-<<<<<<< HEAD
-=======
     <servlet>
         <servlet-name>GenerateServlet</servlet-name>
         <servlet-class>com.iteso.sweng.RecoveryPass.GenerateServlet</servlet-class>
@@ -107,8 +105,6 @@
         <servlet-name>RedirServlet</servlet-name>
         <url-pattern>/RedirServlet</url-pattern>
     </servlet-mapping>
-
->>>>>>> developdaniel
 
     <session-config>
         <session-timeout>

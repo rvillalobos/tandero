@@ -1,10 +1,6 @@
 package com.iteso.sweng.Profile;
-<<<<<<< HEAD
 import com.iteso.sweng.Profile.Profile;
-=======
 import com.iteso.sweng.RecoveryPass.SendEmail;
-
->>>>>>> developdaniel
 import java.sql.*;
 
 /**
@@ -48,8 +44,7 @@ public class BDProfile {
         return null;
     }
 
-<<<<<<< HEAD
-=======
+
     public Boolean ifExistAccount(String email) throws SQLException{
         String sql = "SELECT * FROM user WHERE email='"+email+"'";
         PreparedStatement ps = conexion.prepareStatement(sql);
@@ -140,7 +135,5 @@ public class BDProfile {
 
     }
 
-
->>>>>>> developdaniel
 
 }
