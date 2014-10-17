@@ -8,7 +8,6 @@
     <title>Login Application</title>
 </head>
 <body>
-
 <nav class="navbar navbar-default" role="navigation">
     <div class="container-fluid">
         <div class="btn-group btn-group-lg">
@@ -61,13 +60,11 @@
     </fieldset>
 </form>
 
-<<<<<<< HEAD
-=======
 <form action="RGenerateServlet" method="post">
     <input type="submit"  class="btn btn-warning" value="Forgot Your Password?" />
 </form>
 
->>>>>>> developdaniel
+
 <form action="faqservlet" method="post">
     <input type="submit" class="btn btn-warning" value="FAQ" />
 </form>

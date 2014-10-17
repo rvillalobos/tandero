@@ -18,7 +18,7 @@ public class FAQServlet extends HttpServlet {
     private static final long serialVersionUID = 1L;
     public void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        response.setContentType("text/html");
+        response.setContentType("text/html"); /*Open General Faq page for user */
         RequestDispatcher rd=request.getRequestDispatcher("FAQGeneral.jsp");
         rd.forward(request,response);
 

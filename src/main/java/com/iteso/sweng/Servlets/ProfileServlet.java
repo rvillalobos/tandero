@@ -26,15 +26,17 @@ public class ProfileServlet extends HttpServlet{
 
         if(session!=null)
         if(LoginDao.validate(n, p)){
+            /*If user exists then return profile page with the attributes */
             RequestDispatcher rd=request.getRequestDispatcher("profile.jsp");
             request.setAttribute("email", n);
             request.setAttribute("password", p);
-            session.setAttribute("email", n);
+            session.setAttribute("email", n);  /* set attributes for next page*/
             session.setAttribute("password", p);
             rd.forward(request,response);
         }
         else{
             //out.print("<p style=\"color:red\">Sorry username or password error</p>");
+            /* Give error page if user not exists */
             RequestDispatcher rd=request.getRequestDispatcher("error.jsp");
             rd.include(request,response);
         }

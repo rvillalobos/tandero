@@ -34,14 +34,14 @@
                 </form>
             </div>
             <div class="btn-group">
-                <form action="loginServlet" method="post">
+                <form action="profileServlet" method="post">
                     <button type="submit" class="btn btn-success">Profile</button>
 
                 </form>
             </div>
             <div class="btn-group">
-                <form action="faqmemberservlet" method="post">
-                    <button type="input" class="btn btn-success">Register</button>
+                <form action="loginrservlet" method="post">
+                    <button type="input" class="btn btn-success">LogIn</button>
 
                 </form>
             </div>
