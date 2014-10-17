@@ -14,7 +14,7 @@ public class ErrorServlet extends HttpServlet {
     private static final long serialVersionUID = 1L;
     public void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        response.setContentType("text/html");
+        response.setContentType("text/html");/*Open Error page for user */
         RequestDispatcher rd=request.getRequestDispatcher("error.jsp");
         rd.forward(request,response);
 

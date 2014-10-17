@@ -14,7 +14,7 @@ public class FAQMemberServlet extends HttpServlet{
     private static final long serialVersionUID = 1L;
     public void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        response.setContentType("text/html");
+        response.setContentType("text/html");/*Open Member Faq page for user */
         RequestDispatcher rd=request.getRequestDispatcher("FAQMember.jsp");
         rd.forward(request,response);
 

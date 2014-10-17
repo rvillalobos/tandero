@@ -14,17 +14,19 @@ public class LoginDao {
         Connection conn = null;
         PreparedStatement pst = null;
         ResultSet rs = null;
-        String url = "jdbc:mysql://localhost:3306/";
+        String url = "jdbc:mysql://localhost:3306/";  /* initialize data base with dbname, dbuser, dbpassword*/
         String dbName = "tandero";
         String driver = "com.mysql.jdbc.Driver";
         String userName = "root";
         String password = "root";
+
+
         try {
             Class.forName(driver).newInstance();
             conn = DriverManager
                     .getConnection(url + dbName, userName, password);
             pst = conn
-                    .prepareStatement("select * from user where email=? and password=?");
+                    .prepareStatement("select * from user where email=? and password=?"); /* try to connect to the database and get the username*/
             pst.setString(1, name);
             pst.setString(2, pass);
             rs = pst.executeQuery();
@@ -41,7 +43,7 @@ public class LoginDao {
             }
             if (pst != null) {
                 try {
-                    pst.close();
+                    pst.close();                    /*Get all the exceptions sql can give*/
                 } catch (SQLException e) {
                     e.printStackTrace();
                 }
@@ -54,6 +56,6 @@ public class LoginDao {
                 }
             }
         }
-        return status;
+        return status;    /* return contact if exists or null*/
     }
 }
