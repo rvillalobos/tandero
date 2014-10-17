@@ -15,7 +15,7 @@ public class LoginDao {
         PreparedStatement pst = null;
         ResultSet rs = null;
         String url = "jdbc:mysql://localhost:3306/";
-        String dbName = "form";
+        String dbName = "tandero";
         String driver = "com.mysql.jdbc.Driver";
         String userName = "root";
         String password = "root";
@@ -24,7 +24,7 @@ public class LoginDao {
             conn = DriverManager
                     .getConnection(url + dbName, userName, password);
             pst = conn
-                    .prepareStatement("select * from login where user=? and password=?");
+                    .prepareStatement("select * from user where email=? and password=?");
             pst.setString(1, name);
             pst.setString(2, pass);
             rs = pst.executeQuery();

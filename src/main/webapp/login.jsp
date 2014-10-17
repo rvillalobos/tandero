@@ -1,29 +1,23 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: Alejandro
-  Date: 15/10/2014
-  Time: 04:25 PM
-  To change this template use File | Settings | File Templates.
---%>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+         pageEncoding="ISO-8859-1"%>
 <html>
 <head>
     <link rel='stylesheet' href='<%= org.webjars.AssetLocator.getWebJarPath("css/bootstrap.min.css") %>'>
     <link rel='stylesheet' href='<%= org.webjars.AssetLocator.getWebJarPath("css/bootstrap-theme.min.css") %>'>
-    <title>General Faq</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+    <title>Login Application</title>
 </head>
 <body>
-
 
 <nav class="navbar navbar-default" role="navigation">
     <div class="container-fluid">
         <div class="btn-group btn-group-lg">
 
             <div class="btn-group">
-                <form action="welcomeServlet" method="post">
-                    <button type="submit" class="btn btn-success">Home</button>
+            <form action="welcomeServlet" method="post">
+                <button type="submit" class="btn btn-success">Home</button>
 
-                </form>
+           </form>
             </div>
 
             <div class="btn-group">
@@ -44,35 +38,39 @@
                 </form>
             </div>
         </div>
-    </div><!-- /.navbar-collapse -->
+        </div><!-- /.navbar-collapse -->
     </div><!-- /.container-fluid -->
 </nav>
 
+<form action="profileServlet" method="post">
+    <fieldset style="width: 300px">
+        <legend> Login to App </legend>
+        <table>
+            <tr>
+                <td>User Email</td>
+                <td><input type="text" name="email" required="required" /></td>
+            </tr>
+            <tr>
+                <td>Password</td>
+                <td><input type="password" name="password" required="required" /></td>
+            </tr>
+            <tr>
+                <td><input type="submit" class=" btn btn-danger" value="Login" /></td>
+            </tr>
+        </table>
+    </fieldset>
+</form>
 
-<h1>General FAQ</h1>
+<<<<<<< HEAD
+=======
+<form action="RGenerateServlet" method="post">
+    <input type="submit"  class="btn btn-warning" value="Forgot Your Password?" />
+</form>
 
-<p>1.- &iquest;What is a tanda?</p>
-
-<p>&nbsp;&nbsp;&nbsp;&nbsp; R<em><span> It is a way of saving your money , organizes several people to define the time you &#39;ll save is defined by numbers, the number tells you the day that you get to receive money.</span></em><br />
-    &nbsp;</p>
-
-<p>2.- &iquest;Where can i register?</p>
-
-<p>&nbsp;&nbsp;&nbsp;&nbsp; R <em>Just click the register account Link in our Homepage</em><br />
-    <br />
-    3.- &iquest;How much does it cost?</p>
-
-<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; R <em>It depends on the organizer, it can go from 1 dollar to the limit the organizer sets. </em></p>
-
-<p>4.- &iquest;What im waiting to join?</p>
-
-<p><em>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; R I dont know.</em></p>
-
-<p>&nbsp;</p>
-
-<p>&nbsp;</p>
-
-
+>>>>>>> developdaniel
+<form action="faqservlet" method="post">
+    <input type="submit" class="btn btn-warning" value="FAQ" />
+</form>
 <script type='text/javascript' src='<%= org.webjars.AssetLocator.getWebJarPath("jquery.min.js") %>'></script>
 <script type='text/javascript' src='<%= org.webjars.AssetLocator.getWebJarPath("js/bootstrap.min.js") %>'></script>
 
