@@ -1,11 +1,7 @@
 package com.iteso.sweng.Profile;
 import com.iteso.sweng.Profile.Profile;
 import com.iteso.sweng.RecoveryPass.SendEmail;
-<<<<<<< HEAD
-=======
 import com.iteso.sweng.SignIn.SignInEmail;
-
->>>>>>> a774a4b955cc577f176fdd10e836afbe9e70d79e
 import java.sql.*;
 
 /**
@@ -54,14 +50,11 @@ public class BDProfile {
         return null;
     }
 
-<<<<<<< HEAD
-=======
     public void setContact(Profile pro) throws SQLException{
         String sql = "INSERT INTO `user`(`name`, `lastname`, `email`, `password`, `phome`, `poffice`, `pmobile`, `nick`, `status`, `street1`, `street2`, `city`, `zip`, `state`, `country`) VALUES ('"+pro.getName()+"', '"+pro.getLastname()+"','"+pro.getEmail()+"', '"+pro.getPassword()+"', '"+pro.getPhome()+"', '"+pro.getPoffice()+"', '"+pro.getPmobile()+"', '"+pro.getNick()+"', '"+0+"', '"+pro.getStreet1()+"', '"+pro.getStreet2()+"', '"+pro.getCity()+"', '"+pro.getZip()+"', '"+pro.getState()+"', '"+pro.getCountry()+"')";
         PreparedStatement ps = conexion.prepareStatement(sql);
         ps.executeUpdate();
     }
->>>>>>> a774a4b955cc577f176fdd10e836afbe9e70d79e
 
     public Boolean ifExistAccount(String email) throws SQLException{
         String sql = "SELECT * FROM user WHERE email='"+email+"'";

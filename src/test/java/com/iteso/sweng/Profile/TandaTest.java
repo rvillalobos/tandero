@@ -1,5 +1,6 @@
 package com.iteso.sweng.Profile;
 
+import com.iteso.sweng.Tanda.*;
 import junit.framework.TestCase;
 import org.junit.Test;
 

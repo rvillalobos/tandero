@@ -17,7 +17,6 @@
 
 <h1>Denied Access</h1>
 
-<<<<<<< HEAD
 <nav class="navbar navbar-default" role="navigation">
     <div class="container-fluid">
         <div class="btn-group btn-group-lg">
@@ -56,10 +55,8 @@
 
 <form action="loginServlet" method="post">
     <button type="input" class="btn-group-lg btn-success">GO TO LOGIN PAGE</button>
-=======
 <form action="index.jsp" method="post" target="_top">
     <button type="input" class="btn-group-lg btn-success">Go Home</button>
->>>>>>> a774a4b955cc577f176fdd10e836afbe9e70d79e
 </form>
 
 <script type='text/javascript' src='<%= org.webjars.AssetLocator.getWebJarPath("jquery.min.js") %>'></script>

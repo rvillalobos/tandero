@@ -14,7 +14,6 @@
     <title>Login Application</title>
 </head>
 <body>
-<<<<<<< HEAD
 <nav class="navbar navbar-default" role="navigation">
     <div class="container-fluid">
         <div class="btn-group btn-group-lg">
@@ -52,13 +51,11 @@
     <fieldset style="width: 300px">
         <legend> Login to App </legend>
         <table>
-=======
 
 <table>
     <form action="profileServlet" method="post">
         <fieldset style="width: 300px">
             <legend> Login to App </legend>
->>>>>>> a774a4b955cc577f176fdd10e836afbe9e70d79e
             <tr>
                 <td>User Email</td>
                 <td><input type="text" name="email" required="required" /></td>
@@ -80,15 +77,11 @@
     <input type="submit"  class="btn btn-warning" value="Forgot your Password?" />
 </form>
 
-<<<<<<< HEAD
-
 <form action="faqservlet" method="post">
     <input type="submit" class="btn btn-warning" value="FAQ" />
 </form>
-=======
->>>>>>> a774a4b955cc577f176fdd10e836afbe9e70d79e
+
 <script type='text/javascript' src='<%= org.webjars.AssetLocator.getWebJarPath("jquery.min.js") %>'></script>
 <script type='text/javascript' src='<%= org.webjars.AssetLocator.getWebJarPath("js/bootstrap.min.js") %>'></script>
-
 </body>
 </html>

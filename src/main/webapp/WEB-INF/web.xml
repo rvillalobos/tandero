@@ -106,8 +106,6 @@
         <url-pattern>/RedirServlet</url-pattern>
     </servlet-mapping>
 
-<<<<<<< HEAD
-=======
     <servlet>
         <servlet-name>RServlet</servlet-name>
         <servlet-class>com.iteso.sweng.Servlets.RServlet</servlet-class>
@@ -144,8 +142,6 @@
         <url-pattern>/ResendCodeServlet</url-pattern>
     </servlet-mapping>
 
-
->>>>>>> a774a4b955cc577f176fdd10e836afbe9e70d79e
     <session-config>
         <session-timeout>
             30
