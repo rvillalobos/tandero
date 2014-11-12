@@ -70,7 +70,7 @@ public class Tanda {
         }
         this.tandaUsersSelected.add(this.tandaUsers.remove(i));
     }
-    private  Tanda (String name, int monto, Organizer org){ //Creates a new tanda with an amount and a name, needs an organizer
+     public  Tanda (String name, int monto, Organizer org){ //Creates a new tanda with an amount and a name, needs an organizer
         setName(name);
         setMonto(monto);
         setOrganizer(org);

@@ -17,11 +17,11 @@ public class TandaTest extends TestCase {
 
     public void setUp() throws Exception {
         organizer = mock(Organizer.class);
-        tanda1 = new Tanda("Tanda1", 1000);
-        tanda2 = new Tanda("Tanda2", 2000);
-        tanda3 = new Tanda("Tanda3", 3000);
-        tanda4 = new Tanda("Tanda4", 4000);
-        tanda5 = new Tanda("Tanda5", 5000);
+        tanda1 = new Tanda("Tanda1", 1000,organizer);
+        tanda2 = new Tanda("Tanda2", 2000,organizer);
+        tanda3 = new Tanda("Tanda3", 3000,organizer);
+        tanda4 = new Tanda("Tanda4", 4000,organizer);
+        tanda5 = new Tanda("Tanda5", 5000,organizer);
 
 
     }
