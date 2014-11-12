@@ -1,3 +1,9 @@
+<%
+    if(session.getAttribute("email")!=null)
+        response.sendRedirect("index2.jsp");
+
+%>
+
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
          pageEncoding="ISO-8859-1"%>
 <html>
@@ -45,6 +51,11 @@
     <fieldset style="width: 300px">
         <legend> Login to App </legend>
         <table>
+
+<table>
+    <form action="profileServlet" method="post">
+        <fieldset style="width: 300px">
+            <legend> Login to App </legend>
             <tr>
                 <td>User Email</td>
                 <td><input type="text" name="email" required="required" /></td>
@@ -54,22 +65,23 @@
                 <td><input type="password" name="password" required="required" /></td>
             </tr>
             <tr>
-                <td><input type="submit" class=" btn btn-danger" value="Login" /></td>
-            </tr>
-        </table>
-    </fieldset>
-</form>
+                <td>
+                    <input type="submit" class="btn btn-danger" value="Login" />
+        </fieldset>
+    </form>
+    </td>
+    </tr>
+</table>
 
 <form action="RGenerateServlet" method="post">
-    <input type="submit"  class="btn btn-warning" value="Forgot Your Password?" />
+    <input type="submit"  class="btn btn-warning" value="Forgot your Password?" />
 </form>
-
 
 <form action="faqservlet" method="post">
     <input type="submit" class="btn btn-warning" value="FAQ" />
 </form>
+
 <script type='text/javascript' src='<%= org.webjars.AssetLocator.getWebJarPath("jquery.min.js") %>'></script>
 <script type='text/javascript' src='<%= org.webjars.AssetLocator.getWebJarPath("js/bootstrap.min.js") %>'></script>
-
 </body>
 </html>

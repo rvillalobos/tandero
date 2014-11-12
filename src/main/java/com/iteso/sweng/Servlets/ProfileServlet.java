@@ -26,12 +26,17 @@ public class ProfileServlet extends HttpServlet{
 
         if(session!=null)
         if(LoginDao.validate(n, p)){
+
             /*If user exists then return profile page with the attributes */
-            RequestDispatcher rd=request.getRequestDispatcher("profile.jsp");
+            RequestDispatcher rd= request.getRequestDispatcher("profile.jsp");
+             rd=request.getRequestDispatcher("index2.jsp");
+             rd=request.getRequestDispatcher("index2.jsp");
             request.setAttribute("email", n);
             request.setAttribute("password", p);
             session.setAttribute("email", n);  /* set attributes for next page*/
             session.setAttribute("password", p);
+
+
             rd.forward(request,response);
         }
         else{
