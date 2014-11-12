@@ -16,7 +16,6 @@
 <body>
 
 <h1>Denied Access</h1>
-
 <nav class="navbar navbar-default" role="navigation">
     <div class="container-fluid">
         <div class="btn-group btn-group-lg">
