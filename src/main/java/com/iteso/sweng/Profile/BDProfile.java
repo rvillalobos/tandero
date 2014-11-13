@@ -1,5 +1,5 @@
 package com.iteso.sweng.Profile;
-import com.iteso.sweng.Profile.Profile;
+
 import com.iteso.sweng.RecoveryPass.SendEmail;
 import com.iteso.sweng.SignIn.SignInEmail;
 import java.sql.*;

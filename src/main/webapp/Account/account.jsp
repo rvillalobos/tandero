@@ -19,11 +19,14 @@
 </head>
 <body>
 <h1>Account Settings</h1>
-<form id="myform" action="RServlet" method="post" target="main">
+<form id="changepass" action="RServlet" method="post" target="main">
     <input hidden="yes" name="value" value="Account/ChangePass/index.jsp">
 </form>
-<a href="#" target="main" onclick="document.getElementById('myform').submit();">Change Password</a><br>
-<a href="construction.jsp" target="main">Edit Profile</a><br>
+<form id="editprofile" action="RServlet" method="post" target="main">
+    <input hidden="yes" name="value" value="Profile/editprofile.jsp">
+</form>
+<a href="#" target="main" onclick="document.getElementById('changepass').submit();">Change Password</a><br>
+<a href="#" target="main" onclick="document.getElementById('editprofile').submit();">Edit Profile</a><br>
 <a href="construction.jsp" target="main">Delete Account</a><br>
 
 

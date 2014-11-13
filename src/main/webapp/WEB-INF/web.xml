@@ -160,6 +160,24 @@
     </servlet-mapping>
 
     <servlet>
+        <servlet-name>EditProfileServlet</servlet-name>
+        <servlet-class>com.iteso.sweng.Profile.EditProfileServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>EditProfileServlet</servlet-name>
+        <url-pattern>/EditProfileServlet</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>CancelEditProfileServlet</servlet-name>
+        <servlet-class>com.iteso.sweng.Profile.CancelEditProfileServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>CancelEditProfileServlet</servlet-name>
+        <url-pattern>/CancelEditProfileServlet</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
         <servlet-name>LogoutServlet</servlet-name>
         <servlet-class>com.iteso.sweng.LogOut.LogoutServlet</servlet-class>
     </servlet>

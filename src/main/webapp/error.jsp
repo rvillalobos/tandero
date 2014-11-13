@@ -16,44 +16,7 @@
 <body>
 
 <h1>Denied Access</h1>
-<nav class="navbar navbar-default" role="navigation">
-    <div class="container-fluid">
-        <div class="btn-group btn-group-lg">
 
-            <div class="btn-group">
-                <form action="loginServlet" method="post">
-                    <button type="submit" class="btn btn-success">Home</button>
-
-                </form>
-            </div>
-
-            <div class="btn-group">
-                <form action="faqservlet" method="post">
-                    <button type="input" class="btn btn-success">Faq</button>
-
-                </form>
-            </div>
-            <div class="btn-group">
-                <form action="profileServlet" method="post">
-                    <button type="submit" class="btn btn-success">Profile</button>
-
-                </form>
-            </div>
-            <div class="btn-group">
-                <form action="loginrservlet" method="post">
-                    <button type="input" class="btn btn-success">LogIn</button>
-
-                </form>
-            </div>
-        </div>
-    </div><!-- /.navbar-collapse -->
-    </div><!-- /.container-fluid -->
-</nav>
-
-<h1>Acceso Denegado</h1>
-
-<form action="loginServlet" method="post">
-    <button type="input" class="btn-group-lg btn-success">GO TO LOGIN PAGE</button>
 <form action="index.jsp" method="post" target="_top">
     <button type="input" class="btn-group-lg btn-success">Go Home</button>
 </form>

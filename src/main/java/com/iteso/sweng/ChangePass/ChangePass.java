@@ -34,7 +34,6 @@ public class ChangePass extends HttpServlet {
 
             respuesta.setAttribute("error", "");
 
-            //Si la cuenta existe
             try {
                 a.conectar();
                 if (password.equals(password2)) {
