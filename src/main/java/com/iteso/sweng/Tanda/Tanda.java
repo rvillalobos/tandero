@@ -70,7 +70,11 @@ public class Tanda {
         }
         this.tandaUsersSelected.add(this.tandaUsers.remove(i));
     }
+<<<<<<< HEAD
     public  Tanda (String name, int monto, Organizer org){ //Creates a new tanda with an amount and a name, needs an organizer
+=======
+     public  Tanda (String name, int monto, Organizer org){ //Creates a new tanda with an amount and a name, needs an organizer
+>>>>>>> 5e4c681d26e1195164ff6950ab3f3ef6152545e6
         setName(name);
         setMonto(monto);
         setOrganizer(org);
