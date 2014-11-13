@@ -43,7 +43,7 @@ public class CancelEditProfileServletTest  {
         servlet.processRequest(request, response); //Puede ser get o do
 
         /*Verify*/
-        verify(session).setAttribute("error", "hola");
+        verify(session).setAttribute("error", "The changes does not have been applied.");
         verify(session).setAttribute("ok", null);
         verify(session).setAttribute("ok2", null);
 

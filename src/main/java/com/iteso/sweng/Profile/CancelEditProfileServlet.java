@@ -20,7 +20,7 @@ public class CancelEditProfileServlet extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
 
         HttpSession respuesta = request.getSession(true);
-        respuesta.setAttribute("error", "hola");
+        respuesta.setAttribute("error", "The changes does not have been applied.");
         respuesta.setAttribute("ok", null);
         respuesta.setAttribute("ok2", null);
 

@@ -38,7 +38,7 @@ public class ActivateServlet extends HttpServlet {
                             if (a.ifCodeIsCorrect2(code, email))
                                 respuesta.setAttribute("ok", "Done, your account is active now!");
                             else
-                                respuesta.setAttribute("error", "The code is wrong.");
+                                respuesta.setAttribute("error", "The code is wrong. The status of your account is not verified yet.");
                         a.desconectar();
 
                     } catch (Exception e) {}

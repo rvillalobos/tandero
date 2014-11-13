@@ -1,3 +1,5 @@
+<%@ page import="com.iteso.sweng.Profile.BDProfile" %>
+<%@ page import="com.iteso.sweng.Profile.Profile" %>
 <%--
   Created by IntelliJ IDEA.
   User: Daniel
@@ -29,6 +31,16 @@
     <title>Tandero.com || TANDERO</title>
 </head>
 <body onLoad="javascript:breakout()">
+<%
+
+    String email = (String)session.getAttribute("email");
+    BDProfile a = new BDProfile();
+    a.conectar();
+    Profile b = a.getContact(email);
+    a.desconectar();
+
+%>
+<% if(email!=null){%>
 <nav class="navbar navbar-default" role="navigation">
     <div class="container-fluid">
         <div class="btn-group btn-group-lg">
@@ -44,11 +56,13 @@
                     <button name="value" type="input" class="btn btn-success" value="Profile/profile.jsp">Profile</button>
                 </form>
             </div>
+            <%if(b.isStatus()){%>
             <div class="btn-group">
                 <form action="construction.jsp" method="post" target="main">
                     <button type="submit" class="btn btn-success">Tanda</button>
                 </form>
             </div>
+            <%}%>
             <div class="btn-group">
                 <form action="RServlet" method="post" target="main">
                     <button name="value" type="input" class="btn btn-success" value="Account/account.jsp">Account</button>
@@ -69,7 +83,8 @@
     </div><!-- /.container-fluid -->
 </nav>
 
-<iframe name="main" src="Profile/profile.jsp" frameborder=0 width="100%" height="100%"></iframe>
+<iframe name="main" src="welcome2.jsp" frameborder=0 width="100%" height="100%"></iframe>
+<%}%>
 
 <script type='text/javascript' src='<%= org.webjars.AssetLocator.getWebJarPath("jquery.min.js") %>'></script>
 <script type='text/javascript' src='<%= org.webjars.AssetLocator.getWebJarPath("js/bootstrap.min.js") %>'></script>

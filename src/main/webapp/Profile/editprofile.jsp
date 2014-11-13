@@ -39,16 +39,16 @@
     <table width="846" border="0">
         <tbody>
         <tr>
-            <td width="162"><label>Name (*):</label></td>
+            <td width="162"><label>Name:</label></td>
             <td width="253">
                 <%=b.getName()%></td>
-            <td width="162"><label>Last Name (*):</label></td>
+            <td width="162"><label>Last Name:</label></td>
             <td width="259">
                 <%=b.getLastname()%></td>
             <td width="20">&nbsp;</td>
         </tr>
         <tr>
-            <td><label>E-mail (*):</label></td>
+            <td><label>E-mail:</label></td>
             <td>
                 <%=b.getEmail()%></td>
             <td><label for="nick2">Nickname:</label></td>
@@ -138,16 +138,16 @@
     <table width="846" border="0">
         <tbody>
         <tr>
-            <td width="162"><label>Name (*):</label></td>
+            <td width="162"><label>Name:</label></td>
             <td width="253">
                 <%=b.getName()%></td>
-            <td width="162"><label>Last Name (*):</label></td>
+            <td width="162"><label>Last Name:</label></td>
             <td width="259">
                 <%=b.getLastname()%></td>
             <td width="20">&nbsp;</td>
         </tr>
         <tr>
-            <td><label>E-mail (*):</label></td>
+            <td><label>E-mail:</label></td>
             <td>
                 <%=b.getEmail()%></td>
             <td><label for="nick">Nickname:</label></td>

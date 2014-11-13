@@ -28,8 +28,11 @@ public class ResendCodeServlet extends HttpServlet {
 
                 try {
                     a.conectar();
-                    if (a.resendCode(email))
+                    if (a.resendCode(email)) {
+                        a.newUser(email);
                         respuesta.setAttribute("ok", "Check your email now.");
+
+                    }
                     else
                         respuesta.setAttribute("error", "ERROR: Your account is active already.");
                     a.desconectar();

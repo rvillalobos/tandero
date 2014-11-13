@@ -78,6 +78,17 @@ public class BDProfile {
         return false;
     }
 
+    public Boolean ifExistCode2(String email) throws SQLException{
+        String sql = "SELECT * FROM newUser WHERE email='"+email+"'";
+        PreparedStatement ps = conexion.prepareStatement(sql);
+        ResultSet rs = ps.executeQuery();
+
+        if(rs.next()){
+            return true;
+        }
+        return false;
+    }
+
     public void active(String email) throws SQLException{
         String sql2 = "UPDATE user" + " SET status ='1'" + "WHERE email = '" +email+"'" ;
         PreparedStatement ps2 = conexion.prepareStatement(sql2);
@@ -179,10 +190,12 @@ public class BDProfile {
             ResultSet rs = ps.executeQuery();
 
             if(rs.next()){
-                SignInEmail b = new SignInEmail();
-                b.EmailSend(email,getNameByEmail(email), rs.getString("code"));
+                //SignInEmail b = new SignInEmail();
+                //b.EmailSend(email,getNameByEmail(email), rs.getString("code"));
                 return true;
             }
+
+
         return false;
 
     }
@@ -202,7 +215,7 @@ public class BDProfile {
         }
 
         //Si ya tiene un codigo de verificacion
-        if(!ifExistCode(email)) {
+        if(!ifExistCode2(email)) {
             //Si no existe un codigo de verificacion
             String sql2 = "INSERT INTO newUser VALUES ('" + code + "','" + email + "')";
             PreparedStatement ps2 = conexion.prepareStatement(sql2);
