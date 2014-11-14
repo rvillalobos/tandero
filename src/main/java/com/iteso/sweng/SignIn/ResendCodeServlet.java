@@ -1,4 +1,4 @@
-package com.iteso.sweng.RecoveryPass;
+package com.iteso.sweng.SignIn;
 
 import com.iteso.sweng.Profile.BDProfile;
 
@@ -11,55 +11,43 @@ import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import java.io.PrintWriter;
 
-
 /**
- * Created by Daniel on 13/10/14.
+ * Created by Daniel on 03/11/14.
  */
-public class VPassServlet extends HttpServlet {
+public class ResendCodeServlet extends HttpServlet {
 
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
             HttpSession respuesta = request.getSession(true);
-            String npass = request.getParameter("npass");
-            String cpass = request.getParameter("cpass");
-            String email = respuesta.getAttribute("sessionVCode").toString();
+            String email = respuesta.getAttribute("email").toString();
             BDProfile a = new BDProfile();
 
             respuesta.setAttribute("error", "");
 
-            //Si E-mail vacio
-            if (npass.isEmpty() || cpass.isEmpty()) {
-                respuesta.setAttribute("error", "You need to put the new password.");
+                try {
+                    a.conectar();
+                    if (a.resendCode(email)) {
+                        a.newUser(email);
+                        respuesta.setAttribute("ok", "Check your email now.");
 
-            } else {
-                //No hay campos vacios, se comparan las cadenas
-                if (!npass.equals(cpass)) {
-                    respuesta.setAttribute("error", "The passwords don't match.");
+                    }
+                    else
+                        respuesta.setAttribute("error", "ERROR: Your account is active already.");
+                    a.desconectar();
 
-                } else {
-                    //Las constraseñas si coinciden
-                    try {
-                        a.conectar();
+                } catch (Exception e) {}
 
-                        a.changePass(email, npass, 1);
-                        respuesta.setAttribute("ok2", "DONE: The password has been changed.");
-                        respuesta.setAttribute("sessionVCode2", "V");
-                        a.desconectar();
 
-                    } catch (Exception e) {}
-                }
-            }
 
             response.setContentType("text/html");
-            RequestDispatcher rd=request.getRequestDispatcher("RecoveryPass/vpass.jsp");
+            RequestDispatcher rd=request.getRequestDispatcher("SignIn/activate.jsp");
             rd.forward(request, response);
 
         }
 
     }
-
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {

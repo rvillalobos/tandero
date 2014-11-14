@@ -8,13 +8,22 @@ import java.util.Calendar;
 import java.util.Collections;
 
 public class Tanda {
+
     private int monto;
     private String name;
+    private Organizer org;
     private boolean concluded;
     private boolean startNow;
     private ArrayList<User> tandaUsers = new ArrayList<User>();
     private ArrayList<User> tandaUsersSelected = new ArrayList<User>();
     Calendar cal = Calendar.getInstance();
+
+    public void setOrganizer(Organizer organizer){
+        this.org = organizer;
+    }
+    public Organizer getOrganizer() {
+        return this.org;
+    }
     public boolean isConcluded() {
         return concluded;
     }
@@ -61,9 +70,16 @@ public class Tanda {
         }
         this.tandaUsersSelected.add(this.tandaUsers.remove(i));
     }
-    public Tanda (String name, int monto){ //Creates a new tanda with an amount and a name
+    public  Tanda (String name, int monto, Organizer org){ //Creates a new tanda with an amount and a name, needs an organizer
+
         setName(name);
         setMonto(monto);
+        setOrganizer(org);
+    }
+
+    public Tanda createNewTanda(String name, int monto, Organizer organizer){
+        return new Tanda(name, monto, organizer);
+
     }
     public boolean StartTanda (Organizer organizer, int day, int month, int year){ //This method checks a date from the user and compares it to the system date. If the date is valid, an instance of
 //calendar named "cal" will store the user date.

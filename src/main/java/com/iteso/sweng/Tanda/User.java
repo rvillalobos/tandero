@@ -8,10 +8,21 @@ package com.iteso.sweng.Tanda;
  */
 public class User {
     private String name;
+
+    protected User (){
+
+    }
+
     public String getName() {
         return name;
     }
     public void setName(String name) {
         this.name = name;
     }
+
+    public User (String name){
+            this.setName(name);
+        }
+
+
 }

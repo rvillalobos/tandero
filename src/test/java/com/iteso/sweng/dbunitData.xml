@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<dataset>
+    <!--Salary Table -->
+    <user nick="daniboy" name="daniel" lastname="carrasco" email="daniel92x@gmail.com"
+          password="123456" phome="7597230809" poffice="7711897658" pmobile="7712315258" street1="perla"
+          street2="marmol" city="zapopan" zip="42300" state="jalisco" country="mexico"  />
+</dataset>

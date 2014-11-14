@@ -14,4 +14,9 @@ public class Organizer extends User{
     public String getName() {
         return super.getName();
     }
+
+    public static Organizer becomeAnOrganizer(User u){
+       Organizer newOrganizer = new Organizer(u.getName());
+        return newOrganizer;
+    }
 }
