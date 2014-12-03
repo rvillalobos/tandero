@@ -173,7 +173,7 @@ public class Profile {
         this.image = image;
     }
 
-    public String getImage(String nick) {
+    public String getImage() {
         return image;
     }
 
@@ -224,4 +224,5 @@ public class Profile {
     public void setCountry(String country) {
         this.country = country;
     }
+
 }
