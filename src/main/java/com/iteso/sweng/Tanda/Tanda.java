@@ -61,6 +61,14 @@ public class Tanda {
         }
     }
 
+    public void ChangeName (Organizer o, String newName){
+        if(this.concluded == true){
+            return;
+        }else{
+            this.name = newName;
+        }
+    }
+
     public void AddUser (User u, Organizer org){ //Add a user to tandaUsers list.
         tandaUsers.add(u);
         return;
