@@ -81,6 +81,8 @@ public class Tanda {
 
     }
 
+
+
     public void AddUser (User u, Organizer org){ //Add a user to tandaUsers list.
         tandaUsers.add(u);
         return;
@@ -93,11 +95,30 @@ public class Tanda {
         }
         this.tandaUsersSelected.add(this.tandaUsers.remove(0));
     }
-    public void SelectUser(Organizer org, int i){ //Same as the above but with an index to select any other user.
+    public void SelectUser(int i){ //Same as the above but with an index to select any other user.
         if(this.tandaUsers.isEmpty()){
             System.out.println("User list is empty");
         }
         this.tandaUsersSelected.add(this.tandaUsers.remove(i));
+    }
+
+    public void ChangeOrganizer(User user){
+
+        if(this.tandaUsers.isEmpty()){
+            System.out.println("User list is empty");
+        }
+
+        else if (this.tandaUsers.contains(user)){
+           Organizer org = Organizer.becomeAnOrganizer(user);
+            this.org=org;
+
+        }
+        else
+        {
+            System.out.println("User was not found in this Tanda");
+
+        }
+        return;
     }
     public  Tanda (String name, int monto, Organizer org){ //Creates a new tanda with an amount and a name, needs an organizer
 
