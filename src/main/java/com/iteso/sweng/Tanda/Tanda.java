@@ -69,6 +69,18 @@ public class Tanda {
         }
     }
 
+    public void clearAllUsers (Organizer o){
+        if(this.concluded == true) {
+            return;
+        }else if(this.startNow == true){
+            System.out.println("This Tanda has already started! You cannot delete any users!");
+        }else{
+            this.tandaUsersSelected.clear();
+            this.tandaUsers.clear();
+        }
+        
+    }
+
     public void AddUser (User u, Organizer org){ //Add a user to tandaUsers list.
         tandaUsers.add(u);
         return;
