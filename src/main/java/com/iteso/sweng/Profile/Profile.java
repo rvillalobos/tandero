@@ -5,6 +5,7 @@ package com.iteso.sweng.Profile;
  */
 public class Profile {
 
+    private int ID;
     private String name;
     private String lastname;
     private String email;
@@ -24,6 +25,7 @@ public class Profile {
 
     public Profile() {
 
+		this.ID=-1;
         this.name = null;
         this.lastname = null;
         this.email = null;
@@ -42,7 +44,14 @@ public class Profile {
         this.country = null;
 
     }
-
+	public int getID()
+	{
+		return this.ID;
+	}
+	public void setID(int id)
+	{
+		this.ID=id;
+	}
     /**
      * @return the name
      */

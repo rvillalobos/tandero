@@ -34,6 +34,7 @@ public class DBtanda {
 		iTanda n=null;
 		if(rs.next()){
 		n=new iTanda();
+		n.tandaId=rs.getInt("id");
 		n.name = rs.getString("Name");
 		n.state = rs.getInt("state");
 		n.userId=rs.getInt("organizer");
@@ -47,5 +48,15 @@ public class DBtanda {
 		
 		}
 		return n;
+	}
+	public void getUserIntoTanda(int userId, int tandaId) throws SQLException
+	{
+		String sql = "INSERT INTO tandapartakers VALUES(?,?)";
+        PreparedStatement ps = conexion.prepareStatement(sql);
+		ps.setString(1, Integer.toString( userId ) );
+		ps.setString(2, Integer.toString( tandaId ) );
+		
+        ps.executeUpdate();
+		
 	}
 }

@@ -8,6 +8,7 @@ import java.sql.*;
 public class iTanda {
 
 public String name;
+public int tandaId;
 public int state;
 public int userId;
 public String userName;
