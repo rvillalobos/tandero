@@ -78,7 +78,7 @@ public class Tanda {
             this.tandaUsersSelected.clear();
             this.tandaUsers.clear();
         }
-        
+
     }
 
     public void AddUser (User u, Organizer org){ //Add a user to tandaUsers list.
