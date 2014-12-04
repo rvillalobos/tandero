@@ -45,13 +45,22 @@ public class Tanda {
     public void randomizeUsers( Organizer org ){ //The only list that will be randomized will be the tandaUsers list. Whenever the organizer is done randomizing users, he can then use the method
 //SelectUser to select the first element from tandaUsers and add it to tandaUsersSelected
         if(this.tandaUsers.isEmpty()){
-            System.out.println("No users to randomize, please add users to the tanda");
+            System.out.println("No users to randomize, please add users to the tanda.");
         }else {
             Collections.shuffle(tandaUsers);
             Collections.shuffle(tandaUsers);
             System.out.println("Users Randomized");
         }
     }
+
+    public void StartNow(Organizer o){
+        if(this.startNow == true){
+            System.out.println("This Tanda has already started!");
+        }else{
+            this.startNow = true;
+        }
+    }
+
     public void AddUser (User u, Organizer org){ //Add a user to tandaUsers list.
         tandaUsers.add(u);
         return;
