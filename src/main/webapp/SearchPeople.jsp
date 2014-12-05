@@ -23,17 +23,16 @@
 
       <tr>
         <td>User Email:</td>
-        <td><input type="text" name="" required="required" /></td>
+        <td><input type="text" name="emailBuscar" required="required" /></td>
       </tr>
       <tr>
         <td>
-          <input type="submit" name="emailBuscar" class="btn btn-danger" value="Search" />
+          <input type="submit" name="" class="btn btn-danger" value="Search" />
     </fieldset>
   </form>
   </td>
   </tr>
 </table>
-
 <script type='text/javascript' src='<%= org.webjars.AssetLocator.getWebJarPath("jquery.min.js") %>'></script>
 <script type='text/javascript' src='<%= org.webjars.AssetLocator.getWebJarPath("js/bootstrap.min.js") %>'></script>
 </body>

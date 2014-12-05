@@ -18,10 +18,6 @@
 </head>
 <body>
 
-
-<%
-  System.out.print(session.getAttribute("emailBuscar"));
-%>
 <%
 
   String email = (String)session.getAttribute("emailBuscar");
@@ -31,7 +27,22 @@
   a.desconectar();
 
 %>
+<% if(email!=null){%>
 
+<h1>Your Profile</h1>
+<script>
+  var x = document.createElement("img");
+  x.setAttribute("src","<%=b.getImage()%> ");
+  x.setAttribute("width", "228");
+  x.setAttribute("alt", "The Pulpit Rock");
+  document.body.appendChild(x);
+</script>
+<p><strong>Nickname: </strong><span><% if(b.getNick()==null) out.println("<span style=\"color: #ff0000\">"); %><%=b.getNick()%></span></p>
+<p><strong>Name: </strong><%=b.getName()%></p>
+<p><strong>Last Name: </strong><%=b.getLastname()%></p>
+<p><strong>Country: </strong><span><% if(b.getCountry()==null) out.println("<span style=\"color: #ff0000\">"); %><%=b.getCountry()%></span></p>
+
+<%}%>
 <script type='text/javascript' src='<%= org.webjars.AssetLocator.getWebJarPath("jquery.min.js") %>'></script>
 <script type='text/javascript' src='<%= org.webjars.AssetLocator.getWebJarPath("js/bootstrap.min.js") %>'></script>
 </body>

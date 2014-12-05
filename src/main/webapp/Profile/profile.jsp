@@ -59,16 +59,6 @@
 <p><strong>State: </strong><span><% if(b.getState()==null)
     out.println("<span style=\"color: #ff0000\">"); %><%=b.getState()%></span></p>
 <p><strong>Country: </strong><span><% if(b.getCountry()==null) out.println("<span style=\"color: #ff0000\">"); %><%=b.getCountry()%></span></p>
-
-<p><strong> </strong> <span><%
-    if(b.getCountry()==null) out.println("<span style=\"color: #ff0000\">");
-    %>
-    <%=
-    b.getCountry()
-    %>
-</span>
-</p>
-
 <p><strong>Status Account: </strong><%
     if(b.isStatus())
     {
