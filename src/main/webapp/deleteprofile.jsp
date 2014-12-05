@@ -42,10 +42,10 @@
 
         <tr>
             <td>password</td>
-            <td><input name="password" /></td>
+            <td><input type="password" name="password" /></td>
         </tr>
     </table>
-    <input type="submit" />
+    <input type="submit" name="" class="btn btn-danger" value="Delete Profile"/>
 </form>
 
 

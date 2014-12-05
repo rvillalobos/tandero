@@ -88,6 +88,11 @@
                     <button type="submit" class="btn btn-success">Log Out</button>
                 </form>
             </div>
+            <div class="btn-group">
+                <form action="deleteprofile.jsp" method="post" target="main">
+                    <button type="submit" class="btn btn-warning">Erase Profile</button>
+                </form>
+            </div>
         </div>
     </div><!-- /.navbar-collapse -->
     </div><!-- /.container-fluid -->

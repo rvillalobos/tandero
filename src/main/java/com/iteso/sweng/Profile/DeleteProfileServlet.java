@@ -5,6 +5,7 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.SQLException;
@@ -19,7 +20,7 @@ public class DeleteProfileServlet extends HttpServlet {
         this.contextPath=req.getContextPath();
         String email = req.getParameter("email");
         String pass = req.getParameter("password");
-
+        HttpSession respuesta = req.getSession(true);
 
         DeleteProfile a = new DeleteProfile();
 
@@ -57,9 +58,11 @@ public class DeleteProfileServlet extends HttpServlet {
         out.println("<html>");
         out.println("<body>");
         out.println("<t1>" + msg + "</t1>");
-        out.println("<br><a href='"+contextPath+"'> return home </a>");
+        out.println("<br><a href='index.jsp'> return home </a>");
         out.println("</body>");
         out.println("</html>");
+
+
     }
 }
 
