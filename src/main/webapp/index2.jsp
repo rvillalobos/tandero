@@ -56,6 +56,16 @@
                     <button name="value" type="input" class="btn btn-success" value="Profile/profile.jsp">Profile</button>
                 </form>
             </div>
+            <div class="btn-group">
+                <form action="RServlet" method="post" target="main">
+                    <button name="value" type="input" class="btn btn-success" value="Account/account.jsp">Account</button>
+                </form>
+            </div>
+            <div class="btn-group">
+                <form action="SearchPeople.jsp" method="post" target="main">
+                    <button type="input" class="btn btn-success" >Search People</button>
+                </form>
+            </div>
             <%if(b.isStatus()){%>
             <div class="btn-group">
                 <form action="mytandas.jsp" method="post" target="main">
@@ -63,15 +73,9 @@
                 </form>
             </div>
             <%}%>
-
             <div class="btn-group">
                 <form action="tandalist.jsp" method="post" target="main">
                     <button type="submit" class="btn btn-success">All Tandas</button>
-                </form>
-            </div>
-            <div class="btn-group">
-                <form action="RServlet" method="post" target="main">
-                    <button name="value" type="input" class="btn btn-success" value="Account/account.jsp">Account</button>
                 </form>
             </div>
             <div class="btn-group">

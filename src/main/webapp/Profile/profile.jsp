@@ -84,9 +84,10 @@
 
     }
 %></p></span>
+
+<%}%>
 <script type='text/javascript' src='<%= org.webjars.AssetLocator.getWebJarPath("jquery.min.js") %>'></script>
 <script type='text/javascript' src='<%= org.webjars.AssetLocator.getWebJarPath("js/bootstrap.min.js") %>'></script>
 
 </body>
 </html>
-<%}%>
