@@ -9,6 +9,7 @@ import java.util.Collections;
 
 public class Tanda {
 
+	public int ID;
     private int monto;
     private String name;
     private Organizer org;

@@ -45,6 +45,7 @@ public class MyTandas {
             amount = rs.getInt("t.amount");
             org = new Organizer(rs.getString("u.name"));
             Tanda tanda = new Tanda(name,amount, org);
+			tanda.ID= rs.getInt("t.id");
             tandas.add(tanda);
         }
 

@@ -2,6 +2,7 @@ package com.iteso.sweng.Tanda;
 
 import com.iteso.sweng.RecoveryPass.SendEmail;
 import com.iteso.sweng.SignIn.SignInEmail;
+import com.iteso.sweng.Profile.*;
 import java.sql.*;
 
 /**
@@ -59,4 +60,68 @@ public class DBtanda {
         ps.executeUpdate();
 		
 	}
+	
+	public void kickPartaker(int userId, int tandaId) throws SQLException
+	{
+		String sql = "DELETE FROM `tandapartakers` WHERE `user`="+userId+" AND `tanda`="+tandaId+" ";
+        PreparedStatement ps = conexion.prepareStatement(sql);
+		
+        ps.executeUpdate();
+		
+	}
+	
+	
+	public iTanda getTanda(int _id) throws SQLException
+	{
+		String sql = "SELECT * FROM tanda WHERE id="+Integer.toString( _id );
+        PreparedStatement ps = conexion.prepareStatement(sql);
+        ResultSet rt = ps.executeQuery();
+		
+		if(rt==null)return null;
+		iTanda n=null;
+		
+		if(rt.next()){
+		n=new iTanda();
+		n.tandaId=rt.getInt("id");
+		n.name = rt.getString("Name");
+		n.state = rt.getInt("state");
+		n.userId=rt.getInt("organizer");
+		
+		//Get oranizer name
+		String sqli = "SELECT * FROM User WHERE iduser = "+n.userId ;
+        PreparedStatement psi = conexion.prepareStatement(sqli);
+        ResultSet userSet = psi.executeQuery();
+		if(userSet.next())
+			n.userName=userSet.getString("name");
+		
+		}
+		return n;
+	}
+	ResultSet rspt;
+	public void loadTandaPartaker(int _id) throws SQLException{
+        String sql = "SELECT * FROM tandapartakers WHERE tanda="+_id;
+        PreparedStatement ps = conexion.prepareStatement(sql);
+        rspt = ps.executeQuery();
+	}
+	public Profile getNextTandaPartaker() throws SQLException,ClassNotFoundException
+	{
+		if(rspt==null)return null;
+		iTanda n=null;
+		
+		Profile b=null;
+		if(rspt.next()){
+		
+		int userId= rspt.getInt("user");
+		
+		//Get user
+		BDProfile a = new BDProfile();
+		a.conectar();
+		b = a.getContact(userId);
+		a.desconectar();
+		}
+		
+		
+		return b;
+	}
+	
 }

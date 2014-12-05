@@ -51,6 +51,36 @@ public class BDProfile {
 
         return null;
     }
+	
+	public Profile getContact(int _id) throws SQLException{
+        String sql = "SELECT * FROM user WHERE iduser='"+_id+"'";
+        PreparedStatement ps = conexion.prepareStatement(sql);
+        ResultSet rs = ps.executeQuery();
+
+        if(rs.next()){
+            Profile contacto = new Profile();
+
+			contacto.setID(rs.getInt("iduser"));
+            contacto.setNick(rs.getString("nick"));
+            contacto.setName(rs.getString("name"));
+            contacto.setLastname(rs.getString("lastname"));
+            contacto.setEmail(rs.getString("email"));
+            contacto.setPhome(rs.getString("phome"));
+            contacto.setPoffice(rs.getString("poffice"));
+            contacto.setPmobile(rs.getString("pmobile"));
+            contacto.setStatus(rs.getBoolean("status"));
+            contacto.setImage(rs.getString("image"));
+            contacto.setStreet1(rs.getString("street1"));
+            contacto.setStreet2(rs.getString("street2"));
+            contacto.setCity(rs.getString("city"));
+            contacto.setZip(rs.getString("zip"));
+            contacto.setState(rs.getString("state"));
+            contacto.setCountry(rs.getString("country"));
+            return contacto;
+        }
+
+        return null;
+    }
 
     public void setContact(Profile pro) throws SQLException{
         String sql = "INSERT INTO `user`(`name`, `lastname`, `email`, `password`, `phome`, `poffice`, `pmobile`, `nick`, `status`, `street1`, `street2`, `city`, `zip`, `state`, `country`) VALUES ('"+pro.getName()+"', '"+pro.getLastname()+"','"+pro.getEmail()+"', '"+pro.getPassword()+"', '"+pro.getPhome()+"', '"+pro.getPoffice()+"', '"+pro.getPmobile()+"', '"+pro.getNick()+"', '"+0+"', '"+pro.getStreet1()+"', '"+pro.getStreet2()+"', '"+pro.getCity()+"', '"+pro.getZip()+"', '"+pro.getState()+"', '"+pro.getCountry()+"')";

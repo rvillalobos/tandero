@@ -83,7 +83,7 @@
 <p>
 <table>
     <tr>
-        <td colspan="2"><b>Partakers</b></td>
+        <td colspan="2"><b>Partakers  </b><a href="tandaPartaker.jsp?tndOr=<% out.print(tanda.ID ); %>"\">Manage</a></td>
     </tr>
 
     <!-- loop here-->

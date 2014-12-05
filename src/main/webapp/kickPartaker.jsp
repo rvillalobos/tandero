@@ -6,7 +6,7 @@
 <html>
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-    <title>Welcome <%=session.getAttribute("name")%></title>
+    <title>PRocesing</title>
     <link rel='stylesheet' href='<%= org.webjars.AssetLocator.getWebJarPath("css/bootstrap.min.css") %>'>
     <link rel='stylesheet' href='<%= org.webjars.AssetLocator.getWebJarPath("css/bootstrap-theme.min.css") %>'>
 </head>
@@ -18,10 +18,9 @@
 <%String email = (String)session.getAttribute("email");%>
 <%
 
-if(session.getAttribute("email")==null)
-        response.sendRedirect("error.jsp");
 
-if(request.getParameter("tti")==null)
+
+if(request.getParameter("ui")==null || request.getParameter("ti")==null)
 	response.sendRedirect("tandalist.jsp");
 
 BDProfile a = new BDProfile();
@@ -29,13 +28,18 @@ BDProfile a = new BDProfile();
     Profile b = a.getContact(email);
     a.desconectar();
 	
-int ui = Integer.parseInt(request.getParameter("tti"));
+int ui = Integer.parseInt(request.getParameter("ui"));
+int ti = Integer.parseInt(request.getParameter("ti"));
+
+
+
 DBtanda tandas=new DBtanda();
 tandas.conectar();
-	tandas.getUserIntoTanda(b.getID(),ui);
+	tandas.kickPartaker(ui,ti);
 tandas.desconectar();
 System.out.println("Peticion cumplida");
-response.sendRedirect("tandalist.jsp");
+response.sendRedirect("tandaPartaker.jsp?tndOr="+ti);
+
 %>
 
 <script type='text/javascript' src='<%= org.webjars.AssetLocator.getWebJarPath("jquery.min.js") %>'></script>
@@ -43,4 +47,3 @@ response.sendRedirect("tandalist.jsp");
 </body>
 
 </html>
-
