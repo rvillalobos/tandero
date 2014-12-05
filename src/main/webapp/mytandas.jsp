@@ -39,7 +39,6 @@
                 <td>
                     Name: <%= t.get(i).getName()%><br>
                     Amount: $<%= t.get(i).getMonto()%><br>
-                    Status <%= t.get(i).getState()%>
                     <br>
                     <div class="btn-group">
                         <form action="TandaDetail.jsp" method="post" target="main">

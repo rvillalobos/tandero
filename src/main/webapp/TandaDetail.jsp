@@ -60,7 +60,15 @@
             <%String statusLine= (status==0)?"Open":
                     (status==1)?"In Progress": "Dead";
             %>
+            <%if (statusLine.equals("Open")){%>
+                <font color="green">
+            <%}else if(statusLine.equals("In Progress")){%>
+                <font color="#b22222">
+            <%} else {%>
+                <font color="gray">
+            <%}%>
             <%=statusLine%>
+                </font>
             <img src=""></td>
     </tr>
     <tr>
