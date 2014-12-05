@@ -1,6 +1,8 @@
 <%@ page import="com.iteso.sweng.Tanda.Tanda" %>
 <%@ page import="com.iteso.sweng.Tanda.Display.MyTandas" %>
 <%@ page import="java.util.ArrayList" %>
+<%@ page import="com.iteso.sweng.Tanda.User" %>
+<%@ page import="com.iteso.sweng.Tanda.Display.Partakers" %>
 <%--
   Created by IntelliJ IDEA.
   User: Arturo Cabrera
@@ -30,6 +32,8 @@
 <body>
 
 <%String email = (String)session.getAttribute("email");%>
+<%String i=request.getParameter("tanda");%>
+
 <%
     MyTandas m = new com.iteso.sweng.Tanda.Display.MyTandas();
     m.conectar();
@@ -37,7 +41,14 @@
     m.desconectar();
 %>
 
-<%String i=request.getParameter("tanda");%>
+<%
+    Partakers pt = new Partakers();
+    pt.conectar();
+    ArrayList<User> u = pt.getPartakers(Integer.parseInt(i)-1);
+    pt.desconectar();
+%>
+
+
 <%Tanda tanda = t.get(Integer.parseInt(i));%>
 
 <h3><%= tanda.getName()%></h3>
@@ -60,17 +71,22 @@
         <td>Amount</td><td> $<%=tanda.getMonto()%></td>
     </tr>
 </table>
+<hr>
+<p>
 <table>
     <tr>
         <td colspan="2"><b>Partakers</b></td>
     </tr>
+
     <!-- loop here-->
+    <%for(int j=0; j<u.size(); j++){%>
     <tr>
         <td>
-            person one
+            <%=u.get(j).getName()%>
         </td></tr>
+    <%}%>
     <!--end of loop-->
 </table>
-
+</p>
 </body>
 </html>
