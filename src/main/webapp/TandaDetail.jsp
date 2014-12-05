@@ -1,3 +1,6 @@
+<%@ page import="com.iteso.sweng.Tanda.Tanda" %>
+<%@ page import="com.iteso.sweng.Tanda.Display.MyTandas" %>
+<%@ page import="java.util.ArrayList" %>
 <%--
   Created by IntelliJ IDEA.
   User: Arturo Cabrera
@@ -25,17 +28,36 @@
     <link rel='stylesheet' href='<%= org.webjars.AssetLocator.getWebJarPath("css/bootstrap-theme.min.css") %>'>
 </head>
 <body>
-<h3>$Name_of_tanda</h3>
+
+<%String email = (String)session.getAttribute("email");%>
+<%
+    MyTandas m = new com.iteso.sweng.Tanda.Display.MyTandas();
+    m.conectar();
+    ArrayList<Tanda> t=m.getTandas(email);
+    m.desconectar();
+%>
+
+<%String i=request.getParameter("tanda");%>
+<%Tanda tanda = t.get(Integer.parseInt(i));%>
+
+<h3><%= tanda.getName()%></h3>
 <table>
     <tr>
-        <td> Status</td><td>$state<img src=""></td>
+        <td> Status</td>
+        <td>
+            <% int status = tanda.getState();%>
+            <%String statusLine= (status==0)?"Open":
+                    (status==1)?"In Progress": "Dead";
+            %>
+            <%=statusLine%>
+            <img src=""></td>
     </tr>
     <tr>
         <td>Organizer</td>
-        <td>$organier</td>
+        <td><%= tanda.getOrganizer().getName()%></td>
     </tr>
     <tr>
-        <td>Amount</td><td> $amount</td>
+        <td>Amount</td><td> $<%=tanda.getMonto()%></td>
     </tr>
 </table>
 <table>

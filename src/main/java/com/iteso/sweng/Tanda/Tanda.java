@@ -19,7 +19,6 @@ public class Tanda {
     Calendar cal = Calendar.getInstance();
     private int state =0;
 
-
     public int getState(){return state;}
     public void setState(int state) {this.state = state;}
     public void setOrganizer(Organizer organizer){
