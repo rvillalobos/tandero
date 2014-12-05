@@ -19,8 +19,8 @@ public class Tanda {
     Calendar cal = Calendar.getInstance();
     private int state =0;
 
-
     public int getState(){return state;}
+    public void setState(int state) {this.state = state;}
     public void setOrganizer(Organizer organizer){
         this.org = organizer;
     }
@@ -45,7 +45,7 @@ public class Tanda {
     public void setMonto(int monto) {
         this.monto = monto;
     }
-    public void setState(int state) {this.state = state;}
+
     public void randomizeUsers( Organizer org ){ //The only list that will be randomized will be the tandaUsers list. Whenever the organizer is done randomizing users, he can then use the method
 //SelectUser to select the first element from tandaUsers and add it to tandaUsersSelected
         if(this.tandaUsers.isEmpty()){

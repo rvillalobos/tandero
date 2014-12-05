@@ -31,7 +31,7 @@
     ArrayList<Tanda> t=m.getTandas(email);
     m.desconectar();
 %>
-
+<%if(t != null){%>
 <%for(int i=0; i<t.size(); i++){%>
     <p>
         <table border="2">
@@ -43,13 +43,17 @@
                     <br>
                     <div class="btn-group">
                         <form action="TandaDetail.jsp" method="post" target="main">
-                            <button type="submit" class="btn btn-success">check tanda</button>
+                            <button type="submit" name="tanda"
+                                    value="<%=i %>" class="btn btn-success">check tanda</button>
                         </form>
                     </div>
                 </td>
             </tr>
         </table>
     </p>
+<%}%>
+<%}else {%>
+<h1>You are not organizing any tanda</h1>
 <%}%>
 
 </body>
