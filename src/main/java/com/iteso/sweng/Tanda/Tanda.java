@@ -14,10 +14,12 @@ public class Tanda {
     private Organizer org;
     private boolean concluded;
     private boolean startNow;
+    private int state =0;
     private ArrayList<User> tandaUsers = new ArrayList<User>();
     private ArrayList<User> tandaUsersSelected = new ArrayList<User>();
     Calendar cal = Calendar.getInstance();
 
+    public int getState(){return state;}
     public void setOrganizer(Organizer organizer){
         this.org = organizer;
     }
@@ -42,6 +44,7 @@ public class Tanda {
     public void setMonto(int monto) {
         this.monto = monto;
     }
+    public void setState(int state) {this.state = state;}
     public void randomizeUsers( Organizer org ){ //The only list that will be randomized will be the tandaUsers list. Whenever the organizer is done randomizing users, he can then use the method
 //SelectUser to select the first element from tandaUsers and add it to tandaUsersSelected
         if(this.tandaUsers.isEmpty()){
@@ -129,7 +132,6 @@ public class Tanda {
 
     public Tanda createNewTanda(String name, int monto, Organizer organizer){
         return new Tanda(name, monto, organizer);
-
     }
     public boolean StartTanda (Organizer organizer, int day, int month, int year){ //This method checks a date from the user and compares it to the system date. If the date is valid, an instance of
 //calendar named "cal" will store the user date.

@@ -17,7 +17,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>Profile || TANDERO</title>
+    <title>My Tandas || TANDERO</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width">
     <link rel='stylesheet' href='<%= org.webjars.AssetLocator.getWebJarPath("css/bootstrap.min.css") %>'>
@@ -26,7 +26,7 @@
 <body>
 <%String email = (String)session.getAttribute("email");%>
 <%
-    com.iteso.sweng.Tanda.Display.MyTandas m = new com.iteso.sweng.Tanda.Display.MyTandas();
+    MyTandas m = new com.iteso.sweng.Tanda.Display.MyTandas();
     m.conectar();
     ArrayList<Tanda> t=m.getTandas(email);
     m.desconectar();
@@ -40,7 +40,12 @@
                     Name: <%= t.get(i).getName()%><br>
                     Amount: $<%= t.get(i).getMonto()%><br>
                     Status <%= t.get(i).getState()%>
-                    <a href="">Check Detail</a>
+                    <br>
+                    <div class="btn-group">
+                        <form action="TandaDetail.jsp" method="post" target="main">
+                            <button type="submit" class="btn btn-success">check tanda</button>
+                        </form>
+                    </div>
                 </td>
             </tr>
         </table>
