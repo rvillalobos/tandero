@@ -58,7 +58,7 @@
             </div>
             <%if(b.isStatus()){%>
             <div class="btn-group">
-                <form action="construction.jsp" method="post" target="main">
+                <form action="mytandas.jsp" method="post" target="main">
                     <button type="submit" class="btn btn-success">Tanda</button>
                 </form>
             </div>
