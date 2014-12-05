@@ -34,7 +34,7 @@ DBtanda tandas=new DBtanda();
 tandas.conectar();
 	tandas.getUserIntoTanda(b.getID(),ui);
 tandas.desconectar();
-out.printnl("Peticion cumplida");
+System.out.println("Peticion cumplida");
 %>
 
 <script type='text/javascript' src='<%= org.webjars.AssetLocator.getWebJarPath("jquery.min.js") %>'></script>

@@ -14,10 +14,11 @@ public class Tanda {
     private Organizer org;
     private boolean concluded;
     private boolean startNow;
-    private int state =0;
     private ArrayList<User> tandaUsers = new ArrayList<User>();
     private ArrayList<User> tandaUsersSelected = new ArrayList<User>();
     Calendar cal = Calendar.getInstance();
+    private int state =0;
+
 
     public int getState(){return state;}
     public void setState(int state) {this.state = state;}
